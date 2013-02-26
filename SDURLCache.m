@@ -778,7 +778,7 @@ static dispatch_queue_t get_disk_io_queue() {
 - (void)dealloc {
     if(_maintenanceTimer) {
         dispatch_source_cancel(_maintenanceTimer);
-        dispatch_release(_maintenanceTimer);
+        _maintenanceTimer = nil;
     }
     _diskCachePath = nil;
     _diskCacheInfo = nil;
